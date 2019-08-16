@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using EntityFrameworkCore.Diagrams.Dto;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EntityFrameworkCore.Diagrams.Dto
 {
@@ -68,7 +69,7 @@ namespace EntityFrameworkCore.Diagrams.Dto
                 IsReadOnlyBeforeSave = e.IsReadOnlyBeforeSave,
                 IsShadowProperty = e.IsShadowProperty,
                 IsStoreGeneratedAlways = e.IsStoreGeneratedAlways,
-                RequiresValueGenerator = e.RequiresValueGenerator,
+                RequiresValueGenerator = e.RequiresValueGenerator(),
                 ValueGenerated = e.ValueGenerated
             };
         }
